@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "rpic.h"
+#include <time.h>
 
 void clearScreen()
 {
@@ -159,4 +160,53 @@ int readKeyInPlace(void)
     while ((getchar()) != '\n');
     restoreCursorLocation();
     return ch;
+}
+
+void setAttribute(Attribute ch)
+{
+    putchar(27);
+    putchar('[');
+    putchar(ch);
+    putchar('m');
+}
+
+void wait(unsigned int secs)
+{
+    unsigned int retTime = time(0) + secs;
+    while (time(0) < retTime);
+}
+
+void teleportUp()
+{
+    putchar(27);
+    putchar('[');
+    putchar('A');
+}
+
+void teleportDown()
+{
+    putchar(27);
+    putchar('[');
+    putchar('B');
+}
+
+void teleportHome()
+{
+    putchar(27);
+    putchar('[');
+    putchar('H');
+}
+
+void teleportBack()
+{
+    putchar(27);
+    putchar('[');
+    putchar('D');
+}
+
+void teleportAhead()
+{
+    putchar(27);
+    putchar('[');
+    putchar('C');
 }
