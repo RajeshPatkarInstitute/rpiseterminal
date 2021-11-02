@@ -65,3 +65,29 @@ void restoreCursorLocation()
     putchar('[');
     putchar('u');
 }
+
+void showCharacter(char ch)
+{
+    putchar(ch);
+    fflush(stdout);
+}
+
+void hideCharacter(char ch)
+{
+    putchar(' ');
+    fflush(stdout);
+}
+
+void showCharacterInPlace(char ch){
+    saveCursorLocation();
+    putchar(ch);
+    restoreCursorLocation();
+    fflush(stdout);
+}
+
+void hideCharacterInPlace(){
+    saveCursorLocation();
+    putchar(' ');
+    restoreCursorLocation();
+    fflush(stdout);
+}
