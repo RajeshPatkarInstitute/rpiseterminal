@@ -10,6 +10,45 @@ void clearScreen()
     teleportTo(1, 1);
 }
 
+void clearToLineEnd()
+{
+    putchar(27);
+    putchar('[');
+    putchar('K');
+}
+
+void clearToLineStart()
+{
+    putchar(27);
+    putchar('[');
+    putchar('1');
+    putchar('K');
+}
+
+void clearLine()
+{
+    putchar(27);
+    putchar('[');
+    putchar('2');
+    putchar('K');
+}
+
+
+void clearToScreenStart()
+{
+    putchar(27);
+    putchar('[');
+    putchar('1');
+    putchar('J');
+}
+
+void clearToScreenEnd()
+{
+    putchar(27);
+    putchar('[');
+    putchar('J');
+}
+
 void teleportTo(int x, int y)
 {
     char xstr[3] = {'0', '0', '\0'};
