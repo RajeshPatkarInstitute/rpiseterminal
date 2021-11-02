@@ -20,3 +20,7 @@ void showCharacter(char ch);
 void hideCharacter();
 void showCharacterInPlace(char ch);
 void hideCharacterInPlace(char ch);
+void showCursor();
+void hideCursor();
+int readKey(void);
+int readKeyInPlace(void);
