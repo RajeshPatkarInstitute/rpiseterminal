@@ -11,6 +11,11 @@ enum Color
 };
 
 void clearScreen();
+void clearToLineEnd();
+void clearToLineStart();
+void clearLine();
+void clearToScreenStart();
+void ClearToScreenEnd();
 void teleportTo(int x, int y);
 void foregroundColor(Color foreground);
 void backgroundColor(Color background);
