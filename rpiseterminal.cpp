@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include "rpic.h"
+#include "rpiseterminal.h"
 #include <time.h>
 
 void clearScreen()
@@ -149,7 +149,8 @@ void hideCursor()
 int readKey(void)
 {
     char ch = getchar();
-    while ((getchar()) != '\n');
+    if( ch != '\n')
+        while ((getchar()) != '\n');
     return ch;
 }
 
@@ -157,7 +158,7 @@ int readKeyInPlace(void)
 {
     saveCursorLocation();
     char ch = getchar();
-    while ((getchar()) != '\n');
+    if(ch != '\n') while ((getchar()) != '\n');
     restoreCursorLocation();
     return ch;
 }
