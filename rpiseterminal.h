@@ -16,3 +16,7 @@ void foregroundColor(Color foreground);
 void backgroundColor(Color background);
 void saveCursorLocation();
 void restoreCursorLocation();
+void showCharacter(char ch);
+void hideCharacter();
+void showCharacterInPlace(char ch);
+void hideCharacterInPlace(char ch);
