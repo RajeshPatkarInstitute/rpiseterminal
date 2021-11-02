@@ -91,3 +91,33 @@ void hideCharacterInPlace(){
     restoreCursorLocation();
     fflush(stdout);
 }
+
+void showCursor()
+{
+    char es[6] = {27, '[', '?', '2', '5', 'h'};
+    for (int i = 0; i <= 5; i++)
+        putchar(es[i]);
+}
+
+void hideCursor()
+{
+    char es[6] = {27, '[', '?', '2', '5', 'l'};
+    for (int i = 0; i <= 5; i++)
+        putchar(es[i]);
+}
+
+int readKey(void)
+{
+    char ch = getchar();
+    while ((getchar()) != '\n');
+    return ch;
+}
+
+int readKeyInPlace(void)
+{
+    saveCursorLocation();
+    char ch = getchar();
+    while ((getchar()) != '\n');
+    restoreCursorLocation();
+    return ch;
+}
